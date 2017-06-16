@@ -4,6 +4,8 @@ let app = express();
 let multer = require('multer');
 let upload = multer({dest: 'uploads/'});
 
+let fs = require('fs');
+
 app.set('port', (process.env.PORT || 5000));
 
 app.set('views', __dirname + '/views');
@@ -22,7 +24,13 @@ app.post('/upload', upload.single('new_file'), function(req, res){
     console.log(req.file.size + " bytes");
     let json = {size: req.file.size};
     res.end(JSON.stringify(json));
+    //---print all uploaded files---
+    console.log("uploaded: \n");
+    fs.readdirSync('uploads/').forEach(function (file){
+        console.log(file);
+    });
 });
+
 
 
 app.listen(app.get('port'), function() {
