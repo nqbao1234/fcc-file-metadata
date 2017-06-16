@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	      <title>Image search microservice</title>
+	      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+         #title {
+             color: green;
+         }
+         body {
+             padding: 7%;
+         }
+        </style>
+    </head>
+    <body>
+	      <h1 id="title">File Metadata microservice</h1>
+	      <h2>(Freecodecamp API challenge)</h2>
+        <br>
+        <br>
+	      <h4>The user can upload an arbitary file and its size (measured in bytes) will be returned.</h4>
+        <br>
+        <form id ="uploader" enctype ="multipart/form-data" action ="/upload" method ="post" >
+            <input type="file" name="new_file">
+            <input type="submit" value="Upload file" name="submit_file">
+        </form>
+    </body>
+</html>
